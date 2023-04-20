@@ -22,8 +22,8 @@ class Book(object):
         self.cursor.close()
         self.conn.close()
 
-    def get_books_infos_limit(self):
-        sql = "select * from book_infos"
+    def get_books_infos_limit(self,name):
+        sql = "select * from book_infos where name={}".format(name)
         self.cursor.execute(sql)
         # return data
         data = self.cursor.fetchall()
